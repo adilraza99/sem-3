@@ -38,8 +38,7 @@ export const createStudent = async(req,res)=>{
 }
 
 export const findStudentByEmail = async(req,res)=>{
-    // const student = await Student.findByEmail(req.body.email)
-    const student = await Student.fin
+    const student = await Student.findOne({ email: req.body.email })
 
     if(!student)
         return res.status(401).json({message:"Invalid email"})
